@@ -114,9 +114,11 @@ Badge.propTypes = {
 }
 
 Badge.defaultProps = {
+  animated: true,
   anchor: 'topRight',
   color: 'red',
   offset: -3,
+  shadow: true,
   size: 10,
   visible: true
 }
