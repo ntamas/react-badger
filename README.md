@@ -29,6 +29,9 @@ The component supports the following props:
   Currently supported values are: `inline`, `topLeft`, `topRight`, `bottomLeft`,
   and `bottomRight`. The default value is `topRight`.
 
+* `animated`: whether the badge should be animated when it appears or
+  disappears.
+
 * `color`: specifies the color of the badge. You can use anything that
   is accepted in CSS for the `background-color` property.
 
@@ -36,6 +39,8 @@ The component supports the following props:
   Ignored when the anchor is set to `inline`. Must be an array of length 2,
   containing the horizontal and vertical offsets in CSS notation. (Pixel values
   can also be declared as numbers; percentages are allowed).
+
+* `shadow`: whether to put a drop shadow below the badge
 
 * `visible`: whether the badge is visible.
 
