@@ -1,0 +1,53 @@
+{
+  "name": "react-badger",
+  "version": "1.0.0",
+  "description": "Simple React notification badge component",
+  "main": "lib/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "npm run build:transpile",
+    "build:transpile": "babel src --out-dir lib",
+    "clean": "rimraf lib/** dist/** docs/ghpages *.tgz examples/**/bundle.js",
+    "dist": "npm run dist:dev && npm run dist:prod",
+    "dist:dev": "webpack --config webpack.build.js -d",
+    "dist:prod": "NODE_ENV=production webpack --config webpack.build.js -p",
+    "gh-pages": "webpack -p && cpx 'examples/basic/*' docs/ghpages && rimraf docs/ghpages/*.jsx && gh-pages -d docs/ghpages && rimraf node_modules/gh-pages/.cache",
+    "lint": "standard",
+    "prepublishOnly": "npm run clean && npm run build",
+    "start": "webpack-dev-server",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntamas/react-badger.git"
+  },
+  "author": "Tamas Nepusz <ntamas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ntamas/react-badger/issues"
+  },
+  "homepage": "https://github.com/ntamas/react-badger#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "cpx": "^1.5.0",
+    "gh-pages": "^1.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rimraf": "^2.6.2",
+    "standard": "^11.0.0",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.2.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.1",
+    "react-transition-group": "^2.2.1"
+  }
+}
