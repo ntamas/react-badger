@@ -7,7 +7,7 @@ export interface IBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   animated?: boolean;
   children?: React.ReactNode | React.ReactNode[];
   color?: string;
-  offset?: number | React.CSSPercentage | Array<number | React.CSSPercentage>;
+  offset?: number | string | Array<number | string>;
   shadow?: boolean;
   size?: number;
   visible?: boolean;
