@@ -12,14 +12,16 @@ class App extends React.Component {
       anchor: 'topRight',
       animated: true,
       color: 'red',
+      label: '',
       offset: -4,
       shadow: true,
-      size: 10,
+      size: 14,
       visible: true
     }
   }
 
   render () {
+    const { label, ...rest } = this.state
     return (
       <div>
         <h1><code>react-badge</code></h1>
@@ -29,7 +31,9 @@ class App extends React.Component {
         <div style={{ textAlign: 'center' }}>
           <div style={{ background: '#eee', display: 'inline-block', lineHeight: '48px', textAlign: 'center', marginBottom: '1em', position: 'relative', minWidth: 48, height: 48 }}>
             Box
-            <Badge {...this.state} />
+            <Badge {...rest} style={{ color: 'white' }}>
+              {label}
+            </Badge>
           </div>
         </div>
 
@@ -88,9 +92,25 @@ class App extends React.Component {
           </div>
 
           <div>
+            <h5>Label</h5>
+            {' \u2022 1 2 3'.split(' ').map(key =>
+              <div key={'label ' + key}>
+                <input type='radio' name='label' value={key} id={'label_' + key} checked={key === this.state.label} onChange={
+                  event => {
+                    if (event.target.checked) {
+                      this.setState({ label: event.target.value })
+                    }
+                  }
+                } />
+                <label htmlFor={'label_' + key}><code>{key}</code></label>
+              </div>
+            )}
+          </div>
+
+          <div>
             <h5>Size</h5>
 
-            {'10 20 30'.split(' ').map(key => Number.parseInt(key)).map(key =>
+            {'14 20 30'.split(' ').map(key => Number.parseInt(key)).map(key =>
               <div key={key}>
                 <input type='radio' name='size' value={key} id={'size_' + key} checked={key === this.state.size} onChange={
                   (event) => {
