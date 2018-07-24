@@ -45,3 +45,5 @@ The component supports the following props:
 * `visible`: whether the badge is visible.
 
 Any additional props are spread to the root `<div>` of the component.
+Children are shown directly in the generated `<div>`, making it possible
+to use children for displaying labels in the badge.
