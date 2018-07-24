@@ -27,13 +27,13 @@ const shadowStyles = {
  * container must be set to `position: relative` in CSS for the badge to work
  * nicely.
  */
-export const Badge = ({ anchor, animated, children, color, offset, shadow, size, visible, ...rest }) => {
+export const Badge = ({ anchor, animated, children, color, offset, shadow, size, style, visible, ...rest }) => {
   const baseStyles = {
     ...defaultBaseStyles,
     ...shadow ? shadowStyles : undefined,
     background: color,
     fontSize: 10,
-    lineHeight: size,
+    lineHeight: size + 'px',
     minHeight: size,
     minWidth: size
   }
@@ -83,7 +83,8 @@ export const Badge = ({ anchor, animated, children, color, offset, shadow, size,
             <div style={{
               ...baseStyles,
               transform: (state === 'entering' || state === 'entered') ? 'scale(1)' : 'scale(0)',
-              transition: 'transform 300ms ease-in-out, background-color 300ms linear'
+              transition: 'transform 300ms ease-in-out, background-color 300ms linear',
+              ...style
             }} {...rest}>
               {children}
             </div>
@@ -110,6 +111,7 @@ Badge.propTypes = {
     )
   ]),
   size: PropTypes.number,
+  style: PropTypes.object,
   visible: PropTypes.bool
 }
 
