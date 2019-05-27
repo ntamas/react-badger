@@ -24,7 +24,7 @@ class App extends React.Component {
     const { label, ...rest } = this.state
     return (
       <div>
-        <h1><code>react-badge</code></h1>
+        <h1><code>react-badger</code></h1>
 
         <p className='lead'>Simple circular badge that can be attached to some corner of its container.</p>
 
@@ -152,4 +152,7 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <React.StrictMode><App /></React.StrictMode>,
+  document.getElementById('root')
+)
