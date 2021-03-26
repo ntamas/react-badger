@@ -80,12 +80,14 @@ export const Badge = ({ anchor, animated, children, color, offset, shadow, size,
       <Transition appear timeout={300} in={visible}>
         {
           state => (
-            <div style={{
-              ...baseStyles,
-              transform: (state === 'entering' || state === 'entered') ? 'scale(1)' : 'scale(0)',
-              transition: 'transform 300ms ease-in-out, background-color 300ms linear',
-              ...style
-            }} {...rest}>
+            <div
+              style={{
+                ...baseStyles,
+                transform: (state === 'entering' || state === 'entered') ? 'scale(1)' : 'scale(0)',
+                transition: 'transform 300ms ease-in-out, background-color 300ms linear',
+                ...style
+              }} {...rest}
+            >
               {children}
             </div>
           )
@@ -93,9 +95,9 @@ export const Badge = ({ anchor, animated, children, color, offset, shadow, size,
       </Transition>
     )
   } else {
-    return visible ? (
-      <div style={baseStyles} {...rest}>{children}</div>
-    ) : null
+    return visible
+      ? <div style={baseStyles} {...rest}>{children}</div>
+      : null
   }
 }
 

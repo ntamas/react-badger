@@ -43,13 +43,15 @@ class App extends React.Component {
 
             {ANCHORS.map(key =>
               <div key={key}>
-                <input type='radio' name='anchor' id={'anchor_' + key} value={key} checked={key === this.state.anchor} onChange={
+                <input
+                  type='radio' name='anchor' id={'anchor_' + key} value={key} checked={key === this.state.anchor} onChange={
                   (event) => {
                     if (event.target.checked) {
                       this.setState({ anchor: event.target.value })
                     }
                   }
-                } />
+                }
+                />
                 <label htmlFor={'anchor_' + key}><code>{key}</code></label>
               </div>
             )}
@@ -60,13 +62,15 @@ class App extends React.Component {
 
             {'0 -4 "25%" [5,10] null'.split(' ').map(key =>
               <div key={key}>
-                <input type='radio' name='offset' value={key} id={'offset_' + key} checked={key === JSON.stringify(this.state.offset)} onChange={
+                <input
+                  type='radio' name='offset' value={key} id={'offset_' + key} checked={key === JSON.stringify(this.state.offset)} onChange={
                   (event) => {
                     if (event.target.checked) {
                       this.setState({ offset: JSON.parse(event.target.value) })
                     }
                   }
-                } />
+                }
+                />
                 <label htmlFor={'offset_' + key}><code>{key}</code></label>
               </div>
             )}
@@ -77,13 +81,15 @@ class App extends React.Component {
 
             {'black red #08f #ffcc00'.split(' ').map(key =>
               <div key={key}>
-                <input type='radio' name='color' value={key} id={'color_' + key} checked={key === this.state.color} onChange={
+                <input
+                  type='radio' name='color' value={key} id={'color_' + key} checked={key === this.state.color} onChange={
                   (event) => {
                     if (event.target.checked) {
                       this.setState({ color: event.target.value })
                     }
                   }
-                } />
+                }
+                />
                 <label htmlFor={'color_' + key}><code>{key}</code></label>
               </div>
             )}
@@ -95,13 +101,15 @@ class App extends React.Component {
             <h5>Label</h5>
             {' \u2022 1 2 3'.split(' ').map(key =>
               <div key={'label ' + key}>
-                <input type='radio' name='label' value={key} id={'label_' + key} checked={key === this.state.label} onChange={
+                <input
+                  type='radio' name='label' value={key} id={'label_' + key} checked={key === this.state.label} onChange={
                   event => {
                     if (event.target.checked) {
                       this.setState({ label: event.target.value })
                     }
                   }
-                } />
+                }
+                />
                 <label htmlFor={'label_' + key}><code>{key}</code></label>
               </div>
             )}
@@ -112,13 +120,15 @@ class App extends React.Component {
 
             {'14 20 30'.split(' ').map(key => Number.parseInt(key)).map(key =>
               <div key={key}>
-                <input type='radio' name='size' value={key} id={'size_' + key} checked={key === this.state.size} onChange={
+                <input
+                  type='radio' name='size' value={key} id={'size_' + key} checked={key === this.state.size} onChange={
                   (event) => {
                     if (event.target.checked) {
                       this.setState({ size: Number.parseInt(event.target.value) })
                     }
                   }
-                } />
+                }
+                />
                 <label htmlFor={'size_' + key}><code>{key}</code></label>
               </div>
             )}
@@ -128,21 +138,27 @@ class App extends React.Component {
             <h5>Options</h5>
 
             <div>
-              <input type='checkbox' name='animated' id='animated' value='1' checked={this.state.animated} onChange={
+              <input
+                type='checkbox' name='animated' id='animated' value='1' checked={this.state.animated} onChange={
                 event => this.setState({ animated: event.target.checked })
-              } />
+              }
+              />
               <label htmlFor='animated'>animated</label>
             </div>
             <div>
-              <input type='checkbox' name='shadow' id='shadow' value='1' checked={this.state.shadow} onChange={
+              <input
+                type='checkbox' name='shadow' id='shadow' value='1' checked={this.state.shadow} onChange={
                 event => this.setState({ shadow: event.target.checked })
-              } />
+              }
+              />
               <label htmlFor='shadow'>shadow</label>
             </div>
             <div>
-              <input type='checkbox' name='visible' id='visible' value='1' checked={this.state.visible} onChange={
+              <input
+                type='checkbox' name='visible' id='visible' value='1' checked={this.state.visible} onChange={
                 event => this.setState({ visible: event.target.checked })
-              } />
+              }
+              />
               <label htmlFor='visible'>visible</label>
             </div>
           </div>
