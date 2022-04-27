@@ -15,6 +15,6 @@ export interface IBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export type BadgeProps = IBadgeProps;
 
-export declare const Badge: React.SFC<IBadgeProps>;
+export declare const Badge: React.FC<IBadgeProps>;
 
 export default Badge;
