@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
 import Badge from '../../src/index'
 
@@ -168,7 +168,8 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <React.StrictMode><App /></React.StrictMode>,
-  document.getElementById('root')
-)
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
+  <React.StrictMode><App /></React.StrictMode>
+);
