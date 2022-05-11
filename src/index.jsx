@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { useRef } from 'react'
 import Transition from 'react-transition-group/Transition'
 
 /**
@@ -75,12 +75,15 @@ export const Badge = ({ anchor, animated, children, color, offset, shadow, size,
     }
   }
 
+  const ref = useRef();
+
   if (animated) {
     return (
-      <Transition appear timeout={300} in={visible}>
+      <Transition appear timeout={300} in={visible} nodeRef={ref}>
         {
           state => (
             <div
+              ref={ref}
               style={{
                 ...baseStyles,
                 transform: (state === 'entering' || state === 'entered') ? 'scale(1)' : 'scale(0)',
@@ -96,7 +99,7 @@ export const Badge = ({ anchor, animated, children, color, offset, shadow, size,
     )
   } else {
     return visible
-      ? <div style={baseStyles} {...rest}>{children}</div>
+      ? <div ref={ref} style={baseStyles} {...rest}>{children}</div>
       : null
   }
 }
