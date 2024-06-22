@@ -1,6 +1,6 @@
 {
   "name": "react-badger",
-  "version": "2.0.21",
+  "version": "2.0.22",
   "description": "Simple React notification badge component",
   "main": "lib/index.js",
   "types": "index.d.ts",
