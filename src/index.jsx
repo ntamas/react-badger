@@ -86,7 +86,7 @@ export const Badge = ({
     }
   }
 
-  const ref = useRef();
+  const ref = useRef()
 
   if (animated) {
     return (
